@@ -1,5 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
+import GameList from './components/Game/GameList'
 
 import Header from './components/Header';
 
@@ -8,7 +9,8 @@ function App() {
     <div className="App">
       
         <Header />
-        Super Test
+        
+        <GameList />
       
     </div>
   );
