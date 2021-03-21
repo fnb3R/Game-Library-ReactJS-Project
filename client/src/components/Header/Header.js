@@ -3,7 +3,9 @@ import './Header.css'
 const Header = () => {
     return (
         <header>
-            <div className="logoGame"></div>
+            <div className="logoGame">
+            <img className="logoImg" src="/logoGame.png" alt="The Game Library Official" />
+            </div>
             
             <nav>
                 <ul className="navContainer">

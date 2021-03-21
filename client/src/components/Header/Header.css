@@ -2,17 +2,26 @@
     list-style-type: none;
     display: inline;
     margin: 5px 5px;
-    background-color: aqua;
     padding: 5px;
+    border-style: solid;
+    border-color: #C93535;
+    box-shadow: gray;
+    text-shadow: indianred;
 }
 
 .navContainer {
-    background-color: gray;
+    background-color: #87DFAC;
     padding: 10px;
     padding-inline-start: 0px;
+    margin: 0px;
+    
 } 
 
 .logoGame {
-    height: 150px;
+    display: inline-block;
+}
+
+.logoImg {
+    
 }
 
