@@ -1,0 +1,19 @@
+{
+    "posts": [
+        {
+            "id": 1,
+            "title": "Crash",
+            "description": "The coolest wolf"
+        },
+        {
+            "id": 2,
+            "title": "Tomb Raider",
+            "description": "The best adventure game"
+        },
+        {
+            "id": 3,
+            "title": "Project cars 2",
+            "description": "The best sim racing"
+        }
+    ]
+}
