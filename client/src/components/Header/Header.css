@@ -1,16 +1,33 @@
 .navButton {
-    list-style-type: none;
     display: inline;
+}
+.navText:link {
+    color: white;
+}
+
+.navText:hover {
+    padding: 20px;
+    border-width: 4px;
+}
+
+.navText {
+    
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
     margin: 5px 5px;
-    padding: 5px;
+    padding: 10px;
     border-style: solid;
+    border-radius: 10px;
     border-color: #C93535;
     box-shadow: gray;
     text-shadow: indianred;
+    color: white;
+
 }
 
 .navContainer {
-    background-color: #87DFAC;
+    background-color: #222630;
     padding: 10px;
     padding-inline-start: 0px;
     margin: 0px;
@@ -19,9 +36,12 @@
 
 .logoGame {
     display: inline-block;
+    height: 200px;
 }
 
-.logoImg {
-    
+.logoImg:hover {
+    opacity: 80%;
 }
+
+
 

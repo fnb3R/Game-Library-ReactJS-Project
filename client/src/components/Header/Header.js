@@ -2,21 +2,22 @@ import './Header.css'
 
 const Header = () => {
     return (
-        <header>
+        <header className="header">
             <div className="logoGame">
-            <img className="logoImg" src="/logoGame.png" alt="The Game Library Official" />
+            <a href="/" className="logoImg"><img src="/logoGame.png" alt="The Game Library Official" /></a>
+            
             </div>
             
             <nav>
                 <ul className="navContainer">
                     <li className="navButton">
-                        <a href="/">Home</a>
+                        <a href="/" className="navText">Home</a>
                     </li>
                     <li className="navButton">
-                        <a href="/">Register</a>
+                        <a href="/" className="navText">Register</a>
                     </li>
                     <li className="navButton">
-                        <a href="/">Login</a>
+                        <a href="/" className="navText">Login</a>
                     </li>
                 </ul>
             </nav>
