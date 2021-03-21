@@ -1,8 +1,12 @@
+import './Game.css'
+
 function Game(props) {
     return (
-        <a href="/"><article>
-            <img src="/crash.png"></img>
-            <h3>Crash Bandicoot</h3>
+        <a href="/"><article className="gameContainer">
+            <div className="cropImg">
+                <img src={props.img} className="gameImg"></img>
+            </div>
+            <h3 className="gameTitle">{props.title}</h3>
         </article>
         </a>
     )
