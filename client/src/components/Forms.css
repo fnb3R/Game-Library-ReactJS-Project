@@ -29,6 +29,7 @@
     display: block;
     background-attachment: fixed;
     z-index: -1;
+
 }
 
 @keyframes pulse {
