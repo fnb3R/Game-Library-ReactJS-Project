@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import GameList from './components/Game/GameList'
+import {Route, Switch, Link, Redirect} from 'react-router-dom';
 
 import Header from './components/Header';
 
