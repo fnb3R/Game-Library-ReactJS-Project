@@ -1,14 +1,16 @@
 import './Game.css'
+import { Link } from 'react-router-dom';
 
 function Game(props) {
     return (
-        <a href="/"><article className="gameContainer">
+        <Link to={"/edit/" + props.id}><article className="gameContainer" >
             <div className="cropImg">
                 <img src={props.img} className="gameImg"></img>
             </div>
             <h3 className="gameTitle">{props.title}</h3>
         </article>
-        </a>
+        </Link>
+       
     )
 }
 

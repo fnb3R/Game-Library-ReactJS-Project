@@ -23,6 +23,10 @@ const Header = () => {
                     <NavLink className="navText" activeClassName="active-navText" exact={true} to="/login">Login</NavLink>
                         
                     </li>
+                    <li className="navButton">
+                    <NavLink className="navText" activeClassName="active-navText" exact={true} to="/add">Add Game</NavLink>
+                        
+                    </li>
                 </ul>
             </nav>
         </header>

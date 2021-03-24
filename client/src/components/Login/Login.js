@@ -1,13 +1,16 @@
-import '../RegisterAndLogin.css'
+import '../Forms.css'
 
 function Login(props) {
     return (
         <div className="divEx">
             <form action="/auth/login" method="POST">
 
+                <p>Username</p>
                 <input type="text" name="username" />
+                <p>Password</p>
                 <input type="password" name="password" />
-                <input type="submit" value="login" />
+                <br />
+                <input type="submit" value="Login" />
 
             </form>
         </div>
