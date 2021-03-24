@@ -1,4 +1,6 @@
 .divEx {
+    opacity: 70%;
+
     background-color: white;
     display: block;
     block-size: fit-content;

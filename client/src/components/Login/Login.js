@@ -11,6 +11,8 @@ function Login(props) {
                     <p>Password</p>
                     <input type="password" name="password" />
                     <br />
+                    <br />
+                    <br />
                     <input type="submit" value="Login" />
 
                 </form>
