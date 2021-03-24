@@ -2,22 +2,24 @@ import '../Forms.css'
 
 function AddGame(props) {
     return (
-        <div className="divEx">
-            <form action="/auth/register" method="POST" >
-                <p>Game Title:</p>
-                
-                <input type="text" name="title" />
-                
-                <p>Description:</p>
-                <input type="text" name="description" />
-                
-                <p>Image URL:</p>
-                <input type="text" name="imgUrl" />
-                <br />
-                
-                <input type="submit" value="Add" />
+        <div className="center">
+            <div className="divEx">
+                <form action="/auth/register" method="POST" >
+                    <p>Game Title:</p>
 
-            </form>
+                    <input type="text" name="title" />
+
+                    <p>Description:</p>
+                    <input type="text" name="description" />
+
+                    <p>Image URL:</p>
+                    <input type="text" name="imgUrl" />
+                    <br />
+
+                    <input type="submit" value="Add" />
+
+                </form>
+            </div>
         </div>
     )
 }

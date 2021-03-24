@@ -1,5 +1,43 @@
 .divEx {
-    background-color: crimson;
+    background-color: white;
     display: block;
+    block-size: fit-content;
+    width: fit-content;
+    padding: 20px;
+    margin: 20px;
+    border: solid;
+    border-color: #D3D3D3;
+    border-width: 2px;
+    border-radius: 20px;
+  position: absolute;
+  top: 0%;
+  left: 50%;
+  -ms-transform: translate(-50%, 0%);
+  transform: translate(-50%, 0%);
+}
+
+.center {
+    text-align: center;
+    position: relative;
+    background-image: url("lol.jpg");
+    height: 100%;
+    width: 100%;
+}
+
+@keyframes pulse {
+	0% {
+        padding: 15px;
+        margin: 25px;
+	}
+
+	50% {
+        padding: 20px;
+        margin: 20px;
+	}
+
+	100% {
+        padding: 15px;
+        margin: 25px;
+	}
 }
 
