@@ -1,4 +1,5 @@
 import './Header.css'
+import { NavLink } from 'react-router-dom';
 
 const Header = () => {
     return (
@@ -11,13 +12,16 @@ const Header = () => {
             <nav>
                 <ul className="navContainer">
                     <li className="navButton">
-                        <a href="/" className="navText">Home</a>
+                        <NavLink className="navText" activeClassName="active-navText" exact={true} to="/">Home</NavLink>
+                       
                     </li>
                     <li className="navButton">
-                        <a href="/" className="navText">Register</a>
+                    <NavLink className="navText" activeClassName="active-navText" exact={true} to="/register">Register</NavLink>
+                        
                     </li>
                     <li className="navButton">
-                        <a href="/" className="navText">Login</a>
+                    <NavLink className="navText" activeClassName="active-navText" exact={true} to="/login">Login</NavLink>
+                        
                     </li>
                 </ul>
             </nav>

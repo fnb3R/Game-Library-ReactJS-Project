@@ -1,6 +1,21 @@
 .navButton {
     display: inline;
 }
+
+.active-navText {
+    color: white;
+    text-decoration: none;
+    list-style-type: none;
+    margin: 5px 5px;
+    padding: 20px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: #C93535;
+    box-shadow: gray;
+    text-shadow: indianred;
+    color: white;
+}
+
 .navText:link {
     color: white;
 }
