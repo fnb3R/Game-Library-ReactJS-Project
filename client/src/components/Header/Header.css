@@ -84,6 +84,7 @@
     box-shadow: gray;
     text-shadow: indianred;
     color: white;
+    font-family: 'Pangolin', cursive;
 
 }
 
@@ -103,7 +104,4 @@
 .logoImg {
     display: block;
 }
-
-
-
 
