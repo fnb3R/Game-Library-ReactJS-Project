@@ -1,24 +1,28 @@
 import '../Forms.css'
+import React, { Component } from 'react';
 
-function Login(props) {
-    return (
-        <div className="center">
-            <div className="divEx">
-                <form action="/auth/login" method="POST">
-
-                    <p>Username</p>
-                    <input type="text" name="username" />
-                    <p>Password</p>
-                    <input type="password" name="password" />
-                    <br />
-                    <br />
-                    <br />
-                    <input type="submit" value="Login" />
-
-                </form>
+class Login extends Component {
+    constructor(props) {
+        super(props);
+    }
+    onSubmitHandler(e) {
+        e.preventDefault();
+    }
+    render() {
+        return (
+            <div className="center">
+                <div className="divEx">
+                    <form >
+                        <label htmlFor="username">Username</label>
+                        <input type="text" name="username" />
+                        <label htmlFor="password">Password</label>
+                        <input type="password" name="password" />
+                        <input type="submit" value="Login" onClick={this.onSubmitHandler.bind(this)} />
+                    </form>
+                </div>
             </div>
-        </div>
-    )
+        )
+    }
 }
 
 export default Login;

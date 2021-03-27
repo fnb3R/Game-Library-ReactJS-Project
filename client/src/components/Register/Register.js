@@ -21,7 +21,7 @@ class Register extends Component {
     onSubmitHandler(e) {
         e.preventDefault();
         let passed = true; 
-        if (this.state.password != this.state.passwordRepeat) {
+        if (this.state.password !== this.state.passwordRepeat) {
             this.setState(state =>
                 ({ errors: { ...state.errors, passwordRepeat: 'Passwords do not match!' } }));
                 passed = false;
@@ -31,9 +31,7 @@ class Register extends Component {
                 ({ errors: { ...state.errors, passwordRepeat: '' } }))
         }
 
-        
         if (this.state.username.length < 3) {
-           // console.log('asdsd');
             this.setState(state => 
                 ({errors: { ...state.errors, username: 'Your name should be at least 3 characters long!'}}));
                 passed = false;
@@ -44,7 +42,6 @@ class Register extends Component {
         }
 
         if (this.state.password.length < 3) {
-            // console.log('asdsd');
              this.setState(state => 
                  ({errors: { ...state.errors, password: 'Your password should be at least 6 symbols long!'}}));
                  passed = false;
@@ -57,20 +54,11 @@ class Register extends Component {
          if (passed) {
              console.log('Send to database!!!!!');
          }
-        // if (!this.emailInput.current.value.includes('@')) {
-        //     this.setState(state => ({errors: { ...state.errors, email: 'There should be an @ sign' }}));
-        //     this.emailInput.current.value = '';
-        //     this.emailInput.current.focus();
-        // } else {
-        //     this.setState(state => ({errors: { ...state.errors, email: '' }}));
-        // }
     };
 
     onChangeHandler(e) {
         this.setState({ [e.target.name]: e.target.value });
     }
-
-    
 
     render() {
         return (
