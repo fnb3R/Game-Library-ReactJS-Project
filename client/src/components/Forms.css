@@ -17,6 +17,12 @@
     -ms-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%);
     font-family: 'Pangolin', cursive;
+    text-align: center;
+}
+
+.input-validation {
+        color: red;
+        font-weight: bold;
 }
 
 .center {
@@ -29,6 +35,11 @@
     display: block;
     background-attachment: fixed;
     z-index: -1;
+
+}
+
+input {
+        display: block;
 
 }
 
