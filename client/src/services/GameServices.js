@@ -1,25 +1,45 @@
 const apiKey = "AIzaSyCq5HVo-GVm5D2dPdxFFze3n-Uu88eQV9M";
 
-const url = "https://the-game-library-project-default-rtdb.firebaseio.com/";
+const databaseUrl = "https://the-game-library-project-default-rtdb.firebaseio.com/";
+
+
+const request = async (url, method, body) => {
+    let options =  {
+        method,
+    };
+
+    if (body) {
+        Object.assign(options, {
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify({...body, returnSecureToken: true})
+        });
+    }
+
+    let response = await fetch(url, options)
+    let data = await response.json();
+    return data;
+}
 
 const gameService = {
     
-    async add(destinationData) {
-        console.log(`${databaseUrl}/games.json?auth=${authService.getUser()}`);
-        let res = await request(`${databaseUrl}/games.json?auth=${authService.getData().tokenId}`, 'POST', destinationData );
-        
+    async add(gameData,tokenId) {
+        let res = await request(`${databaseUrl}/games.json?auth=${tokenId}`, 'POST', gameData );
         return res;
     },
+
 
     async getAll() {
         let res = await request (`${databaseUrl}/games.json`, 'GET');
-        return Object.keys(res).map(key => Object.assign(res[key], {key}) );
+       // return res;
+        return res?Object.keys(res).map(key => Object.assign(res[key], {key}) ) :[];
     },
 
-    async getOne(id) {
-        let res = await request(`${databaseUrl}/games/${id}.json`, 'GET');
-        return res;
-    },
+    // async getOne(id) {
+    //     let res = await request(`${databaseUrl}/games/${id}.json`, 'GET');
+    //     return res;
+    // },
 
     // async getAllByUser() {
     //     // let neshto = {

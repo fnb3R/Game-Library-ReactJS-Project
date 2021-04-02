@@ -17,7 +17,7 @@ class Login extends Component {
             .then((res) => {
                 console.log(res);
                 this.props.history.push('/');
-            }).catch((err) => console.log(err));
+            }).catch((err) => console.log(err.message));
     }
     onChangeHandler(e) {
         this.setState({ [e.target.name]: e.target.value });

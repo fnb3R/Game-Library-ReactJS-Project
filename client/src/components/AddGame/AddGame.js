@@ -1,6 +1,7 @@
 import '../Forms.css'
 import React, { Component } from 'react';
-
+import gameService from '../../services/GameServices';
+import { auth } from '../../utils/firebase';
 class AddGame extends Component {
     constructor(props) {
         super(props);
@@ -52,8 +53,17 @@ class AddGame extends Component {
                 ({ errors: { ...state.errors, imgUrl: '' } }))
         }
 
-        if (passed) {
-            console.log('Send to database!!!!!');
+        if (passed) { // getIdTokenResult() идва от  firebase, връща promise, който съдържа token за auth
+            auth.currentUser.getIdTokenResult()
+                .then((id) => {
+                    gameService.add({
+                        title: this.state.title,
+                        description: this.state.description,
+                        imgUrl: this.state.imgUrl,
+                        owner: auth.currentUser.uid,
+                    }, id.token);
+                    this.props.history.push('/');
+                });
         }
     };
 

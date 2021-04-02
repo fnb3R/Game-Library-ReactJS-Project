@@ -60,7 +60,6 @@ class Register extends Component {
                 .then((res) => {
                     console.log(res);
                     this.props.history.push('/');
-                    
                 });
         }
     };

@@ -1,11 +1,15 @@
 import './Header.css'
+import { useEffect, useState } from 'react';
 import { auth } from '../../utils/firebase';
 import { NavLink } from 'react-router-dom';
 
 const Header = ({
     isAuthenticated,
     username,
+    tokenID,
 }) => {
+    
+
     return (
         <header className="header">
             <div className="logoGame">
