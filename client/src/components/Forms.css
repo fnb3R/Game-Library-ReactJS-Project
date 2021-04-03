@@ -1,23 +1,28 @@
+img {
+        opacity: 100%;
+        max-width: 100%;
+}
 .divEx {
-    opacity: 70%;
+        
 
+    opacity: 70%;
     background-color: white;
     display: block;
     block-size: fit-content;
     width: fit-content;
     padding: 20px;
-    margin: 20px;
     border: solid;
     border-color: #D3D3D3;
     border-width: 2px;
     border-radius: 20px;
     position: absolute;
-    top: 0%;
+    font-family: 'Pangolin', cursive;
+    text-align: center;
+
+    top: 20px;
     left: 50%;
     -ms-transform: translate(-50%, 0%);
     transform: translate(-50%, 0%);
-    font-family: 'Pangolin', cursive;
-    text-align: center;
 }
 
 .input-validation {
@@ -27,12 +32,16 @@
 }     
 
 .center {
-    text-align: center;
+       
+    display: block;
+        text-align: center;
     position: absolute;
     height: 100%;
     width: 100%;
     background-image: url("lol.jpg");
     background-size: 100%;
+    background-repeat: no-repeat;
+  background-attachment: fixed;
     display: block;
     background-attachment: fixed;
     z-index: -1;

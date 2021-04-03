@@ -1,11 +1,14 @@
 import '../Forms.css'
 import React, { Component } from 'react';
+import gameService from '../../services/GameServices';
+import { auth } from '../../utils/firebase';
+
 
 class Edit extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            title: props.match.params.id,
+            title: '',
             description: '',
             imgUrl: '',
             errors: {
@@ -14,7 +17,24 @@ class Edit extends Component {
                 imgUrl: '',
             }
         }
+        gameService.getOne(props.match.params.id).then((res) => {
+            this.setState({ title: res.title, description: res.description, imgUrl: res.imgUrl })
+        })
+
         this.onChangeHandler = this.onChangeHandler.bind(this)
+    }
+
+    onDeleteHandler(e) {
+
+        e.preventDefault();
+
+
+        auth.currentUser.getIdTokenResult()
+                .then((id) => {
+                    gameService.deleteOne(this.props.match.params.id, id.token).then((res) => {
+                        this.props.history.push('/my-games');
+                    })
+                }).catch((err) => console.log(err));
     }
 
     onSubmitHandler(e) {
@@ -53,8 +73,18 @@ class Edit extends Component {
         }
 
         if (passed) {
-            console.log('Send to database!!!!!');
-        }
+            auth.currentUser.getIdTokenResult()
+                .then((id) => {
+                    gameService.editOne(this.props.match.params.id, id.token, {
+                        title: this.state.title,
+                        description: this.state.description,
+                        imgUrl: this.state.imgUrl,
+                    }).then((res) => {
+                        this.props.history.push('/my-games');
+                    })
+                }).catch((err) => console.log(err));
+            }
+            
     };
 
     onChangeHandler(e) {
@@ -82,6 +112,7 @@ class Edit extends Component {
                             <div className='input-validation'>{this.state.errors.imgUrl}</div>
                         }
                         <input type="submit" value="Edit" onClick={this.onSubmitHandler.bind(this)} />
+                        <input type="submit" value="Delete" onClick={this.onDeleteHandler.bind(this)} />
                     </form>
                 </div>
             </div>

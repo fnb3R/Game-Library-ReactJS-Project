@@ -16,7 +16,7 @@ class Login extends Component {
         auth.signInWithEmailAndPassword(this.state.username, this.state.password)
             .then((res) => {
                 console.log(res);
-                this.props.history.push('/');
+                this.props.history.push('/home');
             }).catch((err) => console.log(err.message));
     }
     onChangeHandler(e) {

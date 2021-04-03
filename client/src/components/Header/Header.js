@@ -3,28 +3,26 @@ import { useEffect, useState } from 'react';
 import { auth } from '../../utils/firebase';
 import { NavLink } from 'react-router-dom';
 
-const Header = ({
-    isAuthenticated,
-    username,
-    tokenID,
-}) => {
-    
+const Header = () => {
 
     return (
         <header className="header">
             <div className="logoGame">
-                <a href="/" className="logoImg"><img src="/logoGame.png" alt="The Game Library Official" /></a>
+                <NavLink className="logoImg" exact={true} to="/home"><img src="/logoGame.png" alt="The Game Library Official" /></NavLink>
             </div>
 
             <nav>
                 <ul className="navContainer">
                     <li className="navButton">
-                        <NavLink className="navText" activeClassName="active-navText" exact={true} to="/">Home</NavLink>
+                        <NavLink className="navText" activeClassName="active-navText" exact={true} to="/home">Home</NavLink>
                     </li>
 
-                    {isAuthenticated
+                    {auth.currentUser
                         ?
                         <>
+                        <li className="navButton">
+                            <NavLink className="navText" activeClassName="active-navText" exact={true} to="/my-games">My Games</NavLink>
+                        </li>
                         <li className="navButton">
                             <NavLink className="navText" activeClassName="active-navText" exact={true} to="/add">Add Game</NavLink>
                         </li>

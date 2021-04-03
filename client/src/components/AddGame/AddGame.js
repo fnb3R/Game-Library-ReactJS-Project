@@ -61,8 +61,10 @@ class AddGame extends Component {
                         description: this.state.description,
                         imgUrl: this.state.imgUrl,
                         owner: auth.currentUser.uid,
-                    }, id.token);
-                    this.props.history.push('/');
+                    }, id.token).then((res) => {
+                        this.props.history.push('/my-games');
+                    });
+                    
                 });
         }
     };

@@ -2,8 +2,8 @@ import { Component } from 'react';
 import './Game.css';
 import Game from './Game';
 import gameService from '../../services/GameServices';
-
-class GameList extends Component {
+import { auth } from '../../utils/firebase';
+class MyGameList extends Component {
 
     constructor(props) {
         super(props);
@@ -14,13 +14,11 @@ class GameList extends Component {
     }
 
     componentDidMount() {
-
-        
-            gameService.getAll()
-            .then((res) => {
-                this.setState({ games: res })
-            })
-        
+        console.log(auth.currentUser.uid);    
+        gameService.getByOwner(auth.currentUser.uid)
+             .then((res) => {
+                 this.setState({ games: res })
+             })
     }
 
     render() {
@@ -28,7 +26,6 @@ class GameList extends Component {
         return (
             <div className="gameList">
                 <center>
-
 
                     {this.state.games.map(x => {
                         return <Game
@@ -45,4 +42,4 @@ class GameList extends Component {
     }
 }
 
-export default GameList;
+export default MyGameList;

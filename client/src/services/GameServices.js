@@ -4,7 +4,7 @@ const databaseUrl = "https://the-game-library-project-default-rtdb.firebaseio.co
 
 
 const request = async (url, method, body) => {
-    let options =  {
+    let options = {
         method,
     };
 
@@ -13,7 +13,7 @@ const request = async (url, method, body) => {
             headers: {
                 'content-type': 'application/json'
             },
-            body: JSON.stringify({...body, returnSecureToken: true})
+            body: JSON.stringify({ ...body, returnSecureToken: true })
         });
     }
 
@@ -23,23 +23,30 @@ const request = async (url, method, body) => {
 }
 
 const gameService = {
-    
-    async add(gameData,tokenId) {
-        let res = await request(`${databaseUrl}/games.json?auth=${tokenId}`, 'POST', gameData );
+
+    async add(gameData, tokenId) {
+        let res = await request(`${databaseUrl}/games.json?auth=${tokenId}`, 'POST', gameData);
         return res;
     },
 
 
     async getAll() {
-        let res = await request (`${databaseUrl}/games.json`, 'GET');
-       // return res;
-        return res?Object.keys(res).map(key => Object.assign(res[key], {key}) ) :[];
+        let res = await request(`${databaseUrl}/games.json`, 'GET');
+        // return res;
+        return res ? Object.keys(res).map(key => Object.assign(res[key], { key })) : [];
     },
 
-    // async getOne(id) {
-    //     let res = await request(`${databaseUrl}/games/${id}.json`, 'GET');
-    //     return res;
-    // },
+    async getByOwner(owner) {
+
+        let res = await request(`${databaseUrl}/games.json?orderBy="owner"&equalTo="${owner}"`, 'GET');
+        return res ? Object.keys(res).map(key => Object.assign(res[key], { key })) : [];
+
+    },
+
+    async getOne(id) {
+        let res = await request(`${databaseUrl}/games/${id}.json`, 'GET');
+        return res;
+    },
 
     // async getAllByUser() {
     //     // let neshto = {
@@ -51,11 +58,15 @@ const gameService = {
     //     return Object.keys(res).map(key => Object.assign(res[key], {key}) );
     // },
 
-    // async editOne(id, destination, city, duration, departureDate, imgUrl) {
-    //     let res = await request(`${databaseUrl}/games/${id}.json`, 'GET');
-    //     let newObj = JSON.parse(res);
+    async editOne(id,tokenId, body) {
+        let res = await request(`${databaseUrl}/games/${id}.json?auth=${tokenId}`, 'PATCH',body);
+        return res;
+    },
 
-    // }
+    async deleteOne(id,tokenId) {
+        let res = await request(`${databaseUrl}/games/${id}.json?auth=${tokenId}`, 'DELETE');
+        return res;
+    },
 
 }
 
