@@ -27,7 +27,7 @@ class GameList extends Component {
 
         return (
             <div className="gameList">
-                <center>
+               
 
 
                     {this.state.games.map(x => {
@@ -39,7 +39,7 @@ class GameList extends Component {
                             owner={x.owner}
                         />;
                     })}
-                </center>
+                
             </div>
         )
     }

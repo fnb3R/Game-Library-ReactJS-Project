@@ -20,12 +20,12 @@ class Details extends Component {
 
 
     render() {
-        return (
-            <div className="center">
+        return ( 
+           <div className="center">
                 <div className="divEx">
 
                     <div className="images">
-                        <img src={this.state.imgUrl} />
+                        <img className="images" src={this.state.imgUrl} />
                     </div>
 
                     <div className="details-text">

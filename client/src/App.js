@@ -12,7 +12,7 @@ import Intro from './components/Intro';
 import MyGameList from './components/Game/MyGameList';
 import Details from './components/Details';
 import { Route, Switch, Link, Redirect } from 'react-router-dom';
-
+import Logout from './components/Logout/Logout';
 import Header from './components/Header';
 import Footer from './components/Footer';
 
@@ -24,6 +24,7 @@ function App() {
       <Switch>
         <Route path="/" exact component={Intro} />
         <Route path="/"   component={Header} />
+        
       </Switch>
 
         <Switch>
@@ -36,13 +37,14 @@ function App() {
 
           <Route path="/edit/:id" component={Edit} />
           <Route path="/details/:id" component={Details} />
-          <Route path="/logout" exact render={() => {
-            auth.signOut();
-            return <Redirect to="/home" />
-          }} />
+          <Route path="/logout" component={Logout} />
 
         </Switch>
+        <Switch>
+        <Route path="/" exact  />
+        <Route path="/"   component={Footer} />
         
+      </Switch>
 
     </div>
   );

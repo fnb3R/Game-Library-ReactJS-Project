@@ -85,7 +85,6 @@
     box-shadow: gray;
     text-shadow: indianred;
     font-family: 'Pangolin', cursive;
-
 }
 
 .navContainer {
@@ -93,7 +92,6 @@
     padding: 10px;
     padding-inline-start: 0px;
     margin: 0px;
-    
 } 
 
 .logoGame {
@@ -103,5 +101,15 @@
 
 .logoImg {
     display: block;
+}
+
+.site-footer {
+    background-color: #222630;
+    padding: 10px;
+
+}
+.footerP{
+    margin: 0px;
+    color: white;
 }
 

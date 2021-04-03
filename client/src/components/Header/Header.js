@@ -4,7 +4,7 @@ import { auth } from '../../utils/firebase';
 import { NavLink } from 'react-router-dom';
 
 const Header = () => {
-
+    
     return (
         <header className="header">
             <div className="logoGame">
@@ -21,7 +21,7 @@ const Header = () => {
                         ?
                         <>
                         <li className="navButton">
-                            <NavLink className="navText" activeClassName="active-navText" exact={true} to="/my-games">My Games</NavLink>
+                            <NavLink className="navText" activeClassName="active-navText" exact={true} to="/my-games"> My Games</NavLink>
                         </li>
                         <li className="navButton">
                             <NavLink className="navText" activeClassName="active-navText" exact={true} to="/add">Add Game</NavLink>
@@ -29,7 +29,6 @@ const Header = () => {
                         <li className="navButton">
                         <NavLink className="navText" activeClassName="active-navText" exact={true} to="/logout">Logout</NavLink>
                         </li>
-                        
                         </>
                         :
                         <>

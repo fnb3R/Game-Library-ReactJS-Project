@@ -15,10 +15,11 @@ class MyGameList extends Component {
 
     componentDidMount() {
         console.log(auth.currentUser.uid);    
-        gameService.getByOwner(auth.currentUser.uid)
+        if(auth.currentUser) {
+            gameService.getByOwner(auth.currentUser.uid)
              .then((res) => {
                  this.setState({ games: res })
-             })
+             })}
     }
 
     render() {

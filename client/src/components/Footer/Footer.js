@@ -1,9 +1,7 @@
-import './Footer.css'
-
 const Footer = () => {
     return (
-        <footer id="site-footer">
-            <p>&copy; The Game Library</p>
+        <footer className="site-footer">
+            <p className='footerP'>&copy; The Game Library</p>
         </footer>
     );
 };

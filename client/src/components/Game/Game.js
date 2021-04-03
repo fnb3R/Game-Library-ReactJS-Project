@@ -18,7 +18,7 @@ function Game(props) {
                     {
                         matchingUidOwner
                             ?
-                            <NavLink to={"/edit/" + props.id}>Edit</NavLink>
+                            <NavLink className="edit-button" to={"/edit/" + props.id}>Edit</NavLink>
                             :
                             <>
                             </>
