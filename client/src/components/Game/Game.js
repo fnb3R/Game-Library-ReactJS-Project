@@ -5,7 +5,7 @@ import { auth } from '../../utils/firebase';
 function Game(props) {
 
     let matchingUidOwner = false;
-    if(auth.currentUser) matchingUidOwner = (auth.currentUser.uid == props.owner);
+    if(auth.currentUser) matchingUidOwner = (auth.currentUser.uid === props.owner);
     
     return (
         <>
@@ -18,7 +18,7 @@ function Game(props) {
                     {
                         matchingUidOwner
                             ?
-                            <NavLink className="edit-button" to={"/edit/" + props.id}>Edit</NavLink>
+                            <NavLink className="edit-button" to={"/edit/" + props.id}>Edit Game</NavLink>
                             :
                             <>
                             </>

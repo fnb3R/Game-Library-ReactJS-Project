@@ -1,7 +1,5 @@
-//import '../Details.css'
 import React, { Component } from 'react';
 import gameService from '../../services/GameServices';
-import { auth } from '../../utils/firebase';
 
 class Details extends Component {
     constructor(props) {
@@ -14,23 +12,20 @@ class Details extends Component {
         gameService.getOne(props.match.params.id).then((res) => {
             this.setState({ title: res.title, description: res.description, imgUrl: res.imgUrl })
         })
-
-
     }
 
-
     render() {
-        return ( 
-           <div className="center">
+        return (
+            <div className="center">
                 <div className="divEx">
 
                     <div className="images">
-                        <img className="images" src={this.state.imgUrl} />
+                        <img className="images" src={this.state.imgUrl} alt="" />
                     </div>
 
                     <div className="details-text">
                         <h3>{this.state.title}</h3>
-                        <p>{this.state.description}</p>
+                        <p className="text-description">{this.state.description}</p>
                     </div>
 
                 </div>
